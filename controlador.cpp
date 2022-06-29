@@ -13,7 +13,7 @@ void Controlador::setDatos(QString nombre, int horas, TipoJornada jornada)
 
 bool Controlador::calcular()
 {
-    // Validar que el obrero no sea nulo
+    // Validar que el obrero no sea nulo o ya se invalido
     if (m_modelo == nullptr){
         return false;
     }
@@ -32,7 +32,7 @@ bool Controlador::calcular()
         break;
     }
 
-    // Calculo de horas extras
+    // Calculo de horas extras que van ha trabjar
     int horas = m_modelo->horas();
     int horasExtra =0;
     if (m_modelo->horas() > 40){
